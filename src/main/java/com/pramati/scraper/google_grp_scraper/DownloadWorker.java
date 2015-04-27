@@ -95,6 +95,9 @@ public class DownloadWorker implements Runnable {
 		}
 		try {
 			if (!titleOfTopic.equals("")) {
+				if (titleOfTopic.length() > 25) {
+					titleOfTopic = titleOfTopic.substring(0, 20);
+				}
 				fileUtil.createFileAndWriteTxt(titleOfTopic, downloadDirectory
 						+ directorySeparator + groupName + directorySeparator
 						+ topicDirectory, contentOfTopic);
